@@ -9,6 +9,7 @@ import { useDebouce } from "@/hooks/useDebounce";
 import { Command, CommandInput, CommandItem, CommandList } from "./ui/command";
 import axios from "axios";
 import { Separator } from "./ui/separator";
+import Image from "next/image";
 const SearchInput = () => {
   const router = useRouter();
   const seachParams = useSearchParams();
@@ -76,7 +77,7 @@ const SearchInput = () => {
         <div className="absolute w-full max-h-72 overflow-y-auto shadow-md z-10 p-2 rounded-b-lg mt-1 bg-secondary">
         {results.map((result: any, index: number) => (<>
           <div key={index} onClick={() =>router.push(`/content/${result.imdbID}`) } className="flex items-center p-2 cursor-pointer hover:bg-primary/10">
-            <img src={result.Poster} alt={result.Title} className="w-12 h-15 mr-2 object-cover" />
+            <Image src={result.Poster} alt={result.Title} className="w-12 h-15 mr-2 object-cover" />
             <div>
               <div className="font-bold">{result.Title}</div>
               <div>{result.Type} | {result.Year}</div>

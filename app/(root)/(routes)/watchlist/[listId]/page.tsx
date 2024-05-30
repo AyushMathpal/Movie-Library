@@ -46,7 +46,7 @@ const WatchListPage = async ({
       {list?.movies.length ? (
         <div className="grid grid-cols-4 gap-y-10">
           {list?.movies?.map((movie: any, index: number) => (
-            <CardComponent movie={movie} />
+            <CardComponent movie={movie} key={index}/>
           ))}
         </div>
       ) : (
