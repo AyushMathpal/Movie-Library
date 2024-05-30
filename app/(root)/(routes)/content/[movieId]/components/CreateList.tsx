@@ -22,6 +22,14 @@ const CreateList = () => {
     if (!name) return alert("Name is required");
     setCreateList(false);
     try {
+      if(privacy==""){
+        alert("Privacy is required");
+        return;
+      }
+      if(name==""){
+        alert("Name is required");
+        return;
+      }
       const response = await axios.post("/api/watchlist", { name, privacy });
       console.log(response.data);
       router.refresh();
@@ -49,7 +57,7 @@ const CreateList = () => {
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <Select value={privacy} onValueChange={(value) => setPrivacy(value)}>
+      <Select value={privacy} onValueChange={(value) => setPrivacy(value)} required>
         <SelectTrigger className=" bg-primary/10 w-full">
           <SelectValue placeholder="Privacy" />
         </SelectTrigger>
