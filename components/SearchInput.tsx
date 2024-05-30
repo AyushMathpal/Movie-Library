@@ -26,7 +26,7 @@ const SearchInput = () => {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `http://www.omdbapi.com/?s=${debouncedValue}&apikey=5a91e79`
+          `https://www.omdbapi.com/?s=${debouncedValue}&apikey=5a91e79`
         );
         if (response.data.Response === "False") {
           setResults([]);
@@ -77,7 +77,7 @@ const SearchInput = () => {
         <div className="absolute w-full max-h-72 overflow-y-auto shadow-md z-10 p-2 rounded-b-lg mt-1 bg-secondary">
         {results.map((result: any, index: number) => (<>
           <div key={index} onClick={() =>router.push(`/content/${result.imdbID}`) } className="flex items-center p-2 cursor-pointer hover:bg-primary/10">
-            <Image src={result.Poster} alt={result.Title} className="w-12 h-15 mr-2 object-cover" />
+            <img src={result.Poster} alt={result.Title} className="w-12 h-16 mr-2 object-cover" />
             <div>
               <div className="font-bold">{result.Title}</div>
               <div>{result.Type} | {result.Year}</div>
