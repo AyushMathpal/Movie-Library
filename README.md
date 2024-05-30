@@ -37,12 +37,13 @@ npm install
    npx prisma generate
    ```
    npx prisma db push(To be used to push local changes to server)
-6. Run the Development Server
-   ```
+   
+7. Run the Development Server
+```
    yarn dev
-# or
-npm run dev
-
+   # or
+   npm run dev
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
